@@ -1,0 +1,133 @@
+.glossary {
+    width: 100%;
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.glossary h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.glossary-search {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.alphabet a {
+    text-decoration: none;
+    color: gray;
+    font-weight: bold;
+}
+
+.alphabet a.active {
+    color: whitesmoke;
+}
+
+.section {
+    margin-bottom: 30px;
+}
+
+.section h3 {
+    background: #efefef;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.term {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    color: rgb(255, 255, 255);
+    font-family: 'Segoe UI', sans-serif
+}
+
+.term p {
+    margin-top: 5px;
+    color: whitesmoke;
+}
+
+.glossary-link {
+    color: rgb(219, 219, 219);
+    font-weight: bold;
+    text-decoration: none;
+    transition: text-decoration 0.2s;
+}
+
+.glossary-link:hover {
+    text-decoration: underline;
+}
+
+.popup-overlay {
+    position: fixed;
+    inset: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    z-index: 1000;
+}
+/* ──────────────────────────────────────────────
+  This is for the popup component.
+────────────────────────────────────────────── */
+.popup {
+    position: relative;
+
+    width: 450px;
+    max-width: 90%;
+
+    background: #d32f2f;
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
+
+.popup-text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.phone-number {
+    font-size: 56px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    
+}
+
+.close-button {
+    position: absolute;
+
+    top: 10px;
+    right: 10px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+.close-button:hover {
+    opacity: 0.8;
+}

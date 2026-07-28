@@ -1,0 +1,242 @@
+[
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q01",
+    "order": 1,
+    "text": "During the past two weeks, how often have you felt nervous or on edge?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q02",
+    "order": 2,
+    "text": "How often have you found it difficult to stop worrying?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q03",
+    "order": 3,
+    "text": "How often have you worried about many different things at once?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q04",
+    "order": 4,
+    "text": "How often have you found it difficult to relax?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q05",
+    "order": 5,
+    "text": "How often have you felt restless or unable to sit still?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q06",
+    "order": 6,
+    "text": "How often have you become easily irritated or frustrated?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q07",
+    "order": 7,
+    "text": "How often have you felt that something bad might happen?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q08",
+    "order": 8,
+    "text": "How often have you had trouble concentrating because of anxious thoughts?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q09",
+    "order": 9,
+    "text": "How often have you experienced physical symptoms such as a racing heart, sweating, or trembling because of anxiety?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "ANXIETY",
+    "questionId": "Q10",
+    "order": 10,
+    "text": "How often have your worries made it difficult to complete daily tasks or enjoy activities?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q01",
+    "order": 1,
+    "text": "During the past two weeks, how often have you felt little interest or pleasure in doing things?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q02",
+    "order": 2,
+    "text": "How often have you felt down, sad, or hopeless?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q03",
+    "order": 3,
+    "text": "How often have you had trouble falling asleep, staying asleep, or sleeping too much?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q04",
+    "order": 4,
+    "text": "How often have you felt tired or had very little energy?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q05",
+    "order": 5,
+    "text": "How often have you noticed a significant change in your appetite or eating habits?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q06",
+    "order": 6,
+    "text": "How often have you felt bad about yourself or felt like you have let yourself or others down?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q07",
+    "order": 7,
+    "text": "How often have you had difficulty concentrating on work, reading, or conversations?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q08",
+    "order": 8,
+    "text": "How often have you felt that you were moving or speaking much slower than usual, or the opposite—feeling unusually restless?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q09",
+    "order": 9,
+    "text": "How often have you found it difficult to stay motivated to complete daily activities?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  },
+  {
+    "testId": "DEPRESSION",
+    "questionId": "Q10",
+    "order": 10,
+    "text": "How often have you felt that life has been especially difficult or overwhelming recently?",
+    "options": [
+      { "label": "Not at all", "score": 0 },
+      { "label": "Several days", "score": 1 },
+      { "label": "More than half the days", "score": 2 },
+      { "label": "Nearly every day", "score": 3 }
+    ]
+  }
+]

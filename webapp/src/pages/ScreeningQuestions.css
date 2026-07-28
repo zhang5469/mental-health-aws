@@ -1,0 +1,229 @@
+/* ──────────────────────────────────────────────
+   ScreeningQuestions.css — Screening Questions
+   Styles the screening question page, question
+   cards, and answer options.
+────────────────────────────────────────────── */
+
+/* ── Main screening page container ── */
+.screening-test {
+  width: min(900px, 90%);
+  margin: 0 auto;
+  padding: 7rem 0 4rem;
+}
+
+/* ── Main page heading ── */
+.screening-heading {
+  margin: 0;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* ── Instructions beneath the heading ── */
+.screening-subtitle {
+  max-width: 650px;
+  margin: 1rem auto 3rem;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Individual question card ── */
+.question-card {
+  margin-bottom: 1.5rem;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.96);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(67, 38, 20, 0.14);
+}
+
+/* ── Question text ── */
+.question-title {
+  margin: 0 0 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #3f2d24;
+}
+
+/* ── Container for all answer options ── */
+.options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* ── One selectable answer option ── */
+.option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1rem;
+  background-color: #fff8f3;
+  border: 1px solid #ead7c8;
+  border-radius: 10px;
+  color: #4b382f;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+/* ── Answer option hover effect ── */
+.option:hover {
+  background-color: #fbe9dc;
+  border-color: #d99368;
+  transform: translateY(-1px);
+}
+
+/* ── Radio button ── */
+.option input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  cursor: pointer;
+  accent-color: #c65f35;
+}
+
+/* ── Answer text ── */
+.option span {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* ── Loading and error messages ── */
+.screening-test-message {
+  padding-top: 8rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+}
+
+/* ── Smaller screens ── */
+@media (max-width: 600px) {
+  .screening-test {
+    width: 92%;
+    padding-top: 6rem;
+  }
+
+  .screening-heading {
+    font-size: 2rem;
+  }
+
+  .screening-subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .question-card {
+    padding: 1.4rem;
+  }
+
+  .question-title {
+    font-size: 1.05rem;
+  }
+
+  .option {
+    padding: 0.85rem;
+  }
+}
+
+/* ── Submit validation message ── */
+.submit-error {
+  margin: 1rem 0;
+  text-align: center;
+  color: #8b1e1e;
+  font-weight: 600;
+}
+
+/* ── Submit screening button ── */
+.submit-screening-button {
+  display: block;
+  margin: 2rem auto;
+  padding: 0.9rem 2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #c65f35;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.submit-screening-button:hover {
+  background-color: #ad4e2b;
+  transform: translateY(-1px);
+}
+
+/* ── Screening result card ── */
+.screening-result {
+  max-width: 650px;
+  margin: 3rem auto 0;
+  padding: 2.5rem;
+  text-align: center;
+
+  background: white;
+  border-radius: 18px;
+
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Result heading ── */
+.screening-result h2 {
+  margin: 0;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  color: #4b382f;
+}
+
+/* ── Big score ── */
+.result-score {
+  margin: 1.5rem 0;
+
+  font-size: 3rem;
+  font-weight: 700;
+
+  color: #c65f35;
+}
+
+/* ── Severity text ── */
+.screening-result h3 {
+  margin: 0 0 1rem;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+
+  color: #a84d28;
+}
+
+/* ── Explanation ── */
+.screening-result p:not(.result-score):not(.result-disclaimer) {
+  margin: 0 auto;
+
+  max-width: 500px;
+
+  line-height: 1.8;
+  font-size: 1.05rem;
+
+  color: #555;
+}
+
+/* ── Disclaimer ── */
+.result-disclaimer {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+
+  border-top: 1px solid #e6e6e6;
+
+  font-size: 0.9rem;
+  line-height: 1.6;
+
+  color: #777;
+}

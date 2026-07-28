@@ -1,0 +1,111 @@
+/* ──────────────────────────────────────────────
+   Screening.css — Screening Page Styles
+
+   1. Page Layout
+   2. Cards Container
+   3. Individual Cards
+   4. Card Overlay
+────────────────────────────────────────────── */
+
+/* ── 1. Page Layout ── */
+
+.screening {
+    flex: 1;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* ── 2. Cards Container ── */
+
+.screening-cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    flex-wrap: wrap;
+}
+
+/* ── 3. Individual Card ── */
+
+.screening-card {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 280px;
+    height: 220px;
+
+    /* Glass effect */
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    overflow: hidden;
+
+    text-decoration: none;
+    color: white;
+
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
+}
+
+.screening-card:hover {
+    transform: translateY(-6px);
+
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.35);
+
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.18);
+}
+
+.screening-title {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #FDF8F0;
+    transition: opacity 0.2s ease;
+}
+
+.screening-card:hover .screening-title {
+    opacity: 0;
+}
+
+.screening-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 1.5rem;
+    text-align: center;
+
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2;
+}
+
+.screening-card:hover .screening-overlay {
+    opacity: 1;
+}
+
+.screening-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: rgba(18, 0, 0, 0.9);
+    margin-bottom: 1rem;
+}

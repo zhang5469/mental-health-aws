@@ -1,0 +1,715 @@
+/* ══════════════════════════════════════════════
+   App.css — Bloom Home Page Styles
+   Organized from outermost wrapper inward:
+   1. Page wrapper
+   2. Profile icon
+   3. Navbar (brand, links, crisis button)
+   4. Hero section (heading + quote)
+══════════════════════════════════════════════ */
+
+/* ── 1. Reset & Page Wrapper ──
+   Removes default browser spacing and makes the
+   page fill the full viewport height */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  position: relative;
+  /* lets us position children with absolute */
+  width: 100%;
+  min-height: 100vh;
+  /* at least the full screen height */
+  /* Warm amber-to-orange gradient — to revert, swap back to: #2DD4A0 → #C8EFE3 */
+  background: linear-gradient(to bottom, #C4956A 0%, #D46A38 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* horizontally center the children */
+}
+
+
+/* ── 2. Profile Icon ──
+   Circular user icon anchored to the top-left
+   corner of the page, outside the navbar */
+.profile-icon {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  color: white;
+  /* white so it shows on the green gradient */
+  cursor: pointer;
+  z-index: 10;
+  /* sits above the gradient */
+}
+
+.profile-icon:hover {
+  color: rgba(255, 255, 255, 0.7);
+  /* slightly dimmed on hover — works on any gradient */
+}
+
+/* ── Login Icon ──
+   Fixed to the bottom-left corner — clicking navigates to the Login page */
+.login-icon {
+  position: fixed;
+  /* stays in place even when scrolling */
+  bottom: 18px;
+  left: 18px;
+  color: white;
+  text-decoration: none;
+  /* removes underline since it's a <Link> */
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.15s, transform 0.15s;
+}
+
+.login-icon:hover {
+  opacity: 0.75;
+  transform: scale(1.1);
+  /* slight zoom on hover */
+}
+
+
+/* ── 3. Navbar ──
+   Transparent bar sitting directly on the gradient —
+   no background, no shadow, no pill shape */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: transparent;
+  /* no background — floats over the gradient */
+  padding: 1rem 2rem;
+  margin-top: 8px;
+  width: 100%;
+  max-width: 1100px;
+  /* keeps navbar from stretching too wide */
+  z-index: 10;
+}
+
+/* ── 3a. Center group — wraps brand + nav links together in the middle ── */
+.navbar-center {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  /* space between "Bloom." and the first tab */
+  flex: 1;
+  /* takes up available space */
+  justify-content: center;
+  /* centers the brand + tabs as a group */
+}
+
+/* Brand (heart icon + "Bloom" name) */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* "Bloom." text — bold serif font with period, matching the "vibrant." reference style */
+.brand-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  /* elegant serif like the reference */
+  font-size: 1.4rem;
+  /* slightly larger to feel like a logo */
+  font-weight: 700;
+  /* bold weight matches "vibrant." */
+  color: white;
+  letter-spacing: -0.3px;
+}
+
+/* ── 3b. Navigation Links ──
+   Text-only links, no icons, white text on gradient */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  /* even spacing between each tab */
+  list-style: none;
+  /* remove bullet points */
+}
+
+/* Each nav item — no padding here so the <Link> fills the full clickable area */
+.nav-item {
+  border-radius: 20px;
+  transition: background 0.15s;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.2);
+  /* subtle white tint on hover */
+}
+
+.nav-item a {
+  display: block;
+  /* makes the link fill the full tab area, not just the text */
+  padding: 0.4rem 0.75rem;
+  /* padding moved here so the whole area is clickable */
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: white;
+  /* white text on the gradient */
+}
+
+/* Active tab link — slightly brighter + underline so the user knows where they are */
+.nav-item a.active {
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Brand link — removes default link styling so "Bloom." looks like a logo */
+.brand-link {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  text-decoration: none;
+}
+
+/* ── 3c. Crisis Support Button ──
+   Coral/red pill — now a <Link> so it navigates to /crisis.
+   text-decoration: none removes the default underline from the link. */
+.crisis-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: #F06B6B;
+  /* coral/salmon red */
+  color: white;
+  text-decoration: none;
+  /* removes underline since it's now a <Link> */
+  border: none;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+  /* prevent text from wrapping */
+}
+
+.crisis-btn:hover {
+  background: #e05555;
+  /* slightly darker on hover */
+  transform: scale(1.02);
+}
+
+.crisis-btn:active {
+  transform: scale(0.98);
+  /* slight press effect when clicked */
+}
+
+
+/* ── 4. Hero Section ──
+   Full-width area below the navbar that holds
+   the main heading and the quote block */
+.hero {
+  flex: 1;
+  /* fills the remaining vertical space */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* stack heading and quote together vertically */
+  gap: 3rem;
+  /* space between heading and quote */
+  padding: 5rem 2rem 4rem;
+  /* top / sides / bottom breathing room */
+}
+
+/* ── 4a. Main Heading ──
+   Large serif font in cream/off-white — most words are upright Playfair Display,
+   while "better way" uses Dancing Script for a flowing cursive contrast */
+.hero-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  /* scales with screen size */
+  font-weight: 400;
+  color: #FDF8F0;
+  /* warm cream/off-white — softer than pure white */
+  text-align: center;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  max-width: 800px;
+  /* keeps the text from spanning too wide */
+}
+
+/* "better way" inside the heading — cursive script font for a flowing, elegant look */
+.hero-heading em {
+  font-family: 'Dancing Script', cursive;
+  /* flowing script contrasts the upright serif */
+  font-style: normal;
+  /* Dancing Script has its own natural slant */
+  font-size: 1.15em;
+  /* slightly larger so the script feels balanced */
+  font-weight: 600;
+}
+
+/* ── 4b. Quote of the Day ──
+   Frosted glass card below the heading. The quote itself is the star:
+   large serif text with a big decorative quotation mark, while the
+   "Quote of the day" title acts as a small eyebrow label above it */
+.quote-section {
+  position: relative;
+  text-align: center;
+  max-width: 640px;
+  padding: 2.25rem 2.75rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* Giant decorative opening quote mark floating in the card's corner */
+.quote-section::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.4rem;
+  left: 1.2rem;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 6rem;
+  line-height: 1;
+  color: rgba(255, 255, 255, 0.28);
+  pointer-events: none;
+}
+
+/* "Quote of the day" — small spaced-out uppercase label */
+.quote-title {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1.1rem;
+}
+
+/* The quote itself — large elegant serif in warm cream */
+.daily-quote p {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.15rem, 2.2vw, 1.45rem);
+  font-style: italic;
+  color: #FDF8F0;
+  line-height: 1.55;
+  margin-bottom: 0.9rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.12);
+}
+
+/* Attribution — small, upright, softly spaced */
+.daily-quote cite {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  font-style: normal;
+  /* <cite> is italic by default — keep the author upright */
+}
+
+
+/* ── 5. Coming Soon Page ──
+   Shared layout for all tabs that are not yet built.
+   Sits in the center of the page on the same gradient. */
+.coming-soon {
+  flex: 1;
+  /* fills remaining vertical space like the hero */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Tab name label above the heading — e.g. "Screening", "Providers" */
+.coming-soon-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  /* spaced-out caps for a label feel */
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* "Coming Soon" large heading */
+.coming-soon-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Short description line below the heading */
+.coming-soon-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* ── Providers Page ── */
+.providers-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.providers-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 5rem 2rem 3rem;
+}
+
+.providers-heading {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 400;
+  color: white;
+  line-height: 1.1;
+}
+
+.providers-sub {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 440px;
+  line-height: 1.6;
+}
+
+/* ZIP search form */
+.zip-form {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.zip-input {
+  font-size: 1.1rem;
+  padding: 0.6rem 1rem;
+  width: 160px;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  outline: none;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+
+.zip-input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.zip-input:focus {
+  border-color: rgba(255, 255, 255, 0.7);
+}
+
+/* ── Custom Dropdown ──
+   Replaces native <select> so the open menu matches the glass
+   theme instead of using the OS's default colors */
+.dropdown {
+  position: relative;
+}
+
+/* The closed control — looks like the other glassy inputs */
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  width: 100%;
+  min-width: 170px;
+  font-size: 0.95rem;
+  font-family: inherit;
+  padding: 0.6rem 0.9rem;
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  backdrop-filter: blur(8px);
+  transition: border-color 0.2s, background 0.15s;
+}
+
+.dropdown-toggle:hover:not(:disabled),
+.dropdown-toggle:focus-visible {
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.dropdown-toggle:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Chevron rotates when the menu is open */
+.dropdown-chevron {
+  flex-shrink: 0;
+  opacity: 0.7;
+  transition: transform 0.15s;
+}
+
+.dropdown-chevron.open {
+  transform: rotate(180deg);
+}
+
+/* The open option list — frosted deep-purple glass panel */
+.dropdown-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  min-width: 100%;
+  max-height: 260px;
+  overflow-y: auto;
+  list-style: none;
+  padding: 0.35rem;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(43, 26, 105, 0.97);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.35);
+  z-index: 50;
+}
+
+/* Each choice in the list */
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  width: 100%;
+  text-align: left;
+  font-size: 0.9rem;
+  font-family: inherit;
+  padding: 0.5rem 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s;
+}
+
+.dropdown-option:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* The currently-selected choice — brighter, with a check mark */
+.dropdown-option.selected {
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-weight: 600;
+}
+
+/* Thin themed scrollbar for long lists (e.g. City) */
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+}
+
+.zip-btn {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1.4rem;
+  border-radius: 10px;
+  border: none;
+  background: white;
+  color: #7c3aed;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+}
+
+.zip-btn:hover:not(:disabled) {
+  background: #f0e9ff;
+  transform: scale(1.02);
+}
+
+.zip-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Results area */
+.providers-results {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 1.5rem 4rem;
+}
+
+/* Filter bar — row of dropdowns that narrows ZIP results.
+   position + z-index lift it above the provider cards so an open
+   dropdown menu isn't painted over by the results below it */
+.filter-bar {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem 1.25rem;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.filter-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.filter-reset {
+  font-size: 0.8rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.15s, color 0.15s;
+}
+
+.filter-reset:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: white;
+}
+
+.providers-count {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.providers-empty {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+.provider-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.provider-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.provider-name {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: white;
+}
+
+/* Small "Male"/"Female" pill shown next to the provider's name */
+.provider-gender {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(240, 107, 107, 0.35);
+  /* soft coral to match the crisis button */
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  vertical-align: middle;
+}
+
+/* Small "Medicare" pill — provider is enrolled in Medicare per CMS data */
+.provider-medicare {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(96, 165, 250, 0.35);
+  /* soft blue to stand apart from gender */
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  vertical-align: middle;
+}
+
+/* Small "2.3 mi" pill shown next to the provider's name on radius searches */
+.provider-distance {
+  display: inline-block;
+  margin-left: 0.5rem;
+  padding: 0.1rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.16);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+  vertical-align: middle;
+}
+
+/* Note shown when a radius search falls back to exact-ZIP matching */
+.providers-note {
+  text-align: center;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+  margin-bottom: 0.75rem;
+}
+
+.provider-cred {
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.provider-specialty {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  font-style: italic;
+}
+
+.provider-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.2rem;
+}
